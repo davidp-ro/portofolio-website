@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+$family-sans-serif: "Inter", sans-serif;
+$midnight-green-eagle-green: #084c61ff;
+$cedar-chest: #db504aff;
+$saffron: #e3b505ff;
+$cadet: #4f6d7aff;
+$cadet-blue: #56a3a6ff;
+
+$body-background-color: #eee;
+$primary: $midnight-green-eagle-green;
+$danger: $cedar-chest;
+$warning: $saffron;
+$link: $cadet;
+$box-link-hover-shadow: 0px 0px 2px 3px $link;
+
+:root {
+  --imageShadowColor: #{$cedar-chest};
+}
+
+html, body {
+  margin: 0;
+  height:100%;
+  width:100%;
+  padding:0;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+// TODO: Only import neccessary modules when done!
+@import "../../node_modules/bulma/bulma.sass";
