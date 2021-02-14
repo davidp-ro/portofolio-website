@@ -11,12 +11,23 @@
   </div>
 </article>
 
+
 <style>
   .consent {
-    position: absolute;
+    position: fixed;
     width: 30rem;
     left: 50%;
     top: 90%;
     transform: translate(-50%);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .consent {
+      position: fixed;
+      width: 20rem;
+      left: 50%;
+      top: 75%;
+      transform: translate(-50%);
+    }
   }
 </style>

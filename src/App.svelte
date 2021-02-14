@@ -52,6 +52,7 @@
     <Contact />
   {:else}
     <Home />
+    <!-- <About /> -->
   {/if}
 
   <!-- Consent -->

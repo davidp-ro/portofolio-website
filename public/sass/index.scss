@@ -9,6 +9,7 @@ $cadet: #4f6d7aff;
 $cadet-blue: #56a3a6ff;
 
 $body-background-color: #eee;
+$navbar-background-color: #eee;
 $primary: $midnight-green-eagle-green;
 $danger: $cedar-chest;
 $warning: $saffron;
@@ -17,6 +18,10 @@ $box-link-hover-shadow: 0px 0px 2px 3px $link;
 
 :root {
   --imageShadowColor: #{$cedar-chest};
+  --primary: #{$midnight-green-eagle-green};
+  --danger: #{$cedar-chest};
+  --warning: #{$saffron};
+  --link: #{$cadet};
 }
 
 html, body {
