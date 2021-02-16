@@ -1,4 +1,8 @@
 <script lang="ts">
+  // Remove safe-text because the script loaded sucesfully
+  const safeText = document.getElementById("safe-text");
+  safeText.remove();
+  
   import { page } from "./stores";
   // import CookieManager from "./utils/cookieManager";
 

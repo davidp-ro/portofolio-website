@@ -9,17 +9,112 @@
     <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon" />
     <link rel="manifest" href="davidp.webmanifest" />
 
-    <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/dist/bundle.css" />
+    <link rel="preload" href="/css/index.css" as="style" onload="this.onload=null; this.rel='stylesheet';">
+    <link rel="preload" href="/dist/bundle.css" as="style" onload="this.onload=null; this.rel='stylesheet';">
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #ddd;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #bbb;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--warning);
+      }
+
+      #pageloader {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        padding-top: 10rem;
+        background-color: #eee;
+        justify-content: center;
+        /* monospace default font looks fine while preloading styles */
+        font-family: monospace;
+        text-align: center;
+        transition: opacity 0.5s linear;
+        z-index: 9999;
+      }
+
+      #pageloader h1 {
+        font-size: large;
+      }
+
+      #safe-text {
+        font-family: monospace;
+        text-align: center;
+        font-size: 2rem;
+      }
+    </style>
   </head>
 
   <body>
+    <noscript>
+      <link rel="stylesheet" href="/css/index.css" />
+      <link rel="stylesheet" href="/dist/bundle.css" />
+    </noscript>
+
+    <div id="pageloader">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        style="margin: auto; background: #eee"
+        width="200"
+        height="200"
+        viewBox="0 0 100 100"
+        display="block"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="32"
+          stroke-width="2"
+          stroke="#084c61"
+          stroke-dasharray="50 50"
+          fill="none"
+          stroke-linecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            repeatCount="indefinite"
+            dur="1.5s"
+            keyTimes="0;1"
+            values="0 50 50;360 50 50"
+          />
+        </circle>
+      </svg>
+      <br />
+      <h1>Hi there!</h1>
+    </div>
+
+    <!-- Show info text if the script doesn't load -->
+    <div id="safe-text">
+      To access this website, you need a more modern website, like<br />
+      <a href="https://www.google.com/chrome/">Google Chrome</a> or<br />
+      <a href="https://www.mozilla.org/firefox/">Mozilla Firefox</a>
+    </div>
+
+    <script>
+      // IE Compatible
+      function loaded() {
+        setTimeout(function() {
+          var pg = document.getElementById("pageloader");
+          pg.style.opacity = "0";
+          setTimeout(function() {pg.style.display = "none"}, 500);
+        }, 500);
+      }
+    </script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js"
       integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw=="
       crossorigin="anonymous"
       defer="defer"
     ></script>
-    <script defer src="/dist/bundle.js"></script>
+    <script defer src="/dist/bundle.js" onload="loaded()"></script>
   </body>
 </html>

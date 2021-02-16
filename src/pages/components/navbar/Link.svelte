@@ -17,6 +17,7 @@
 
   function switchPage(newPage: string) {
     page.update((_) => newPage);
+    window.history.pushState({page: newPage}, `@davidp-ro - ${newPage}`, `?${newPage}`);
   }
 </script>
 

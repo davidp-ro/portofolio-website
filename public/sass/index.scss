@@ -14,7 +14,7 @@ $primary: $midnight-green-eagle-green;
 $danger: $cedar-chest;
 $warning: $saffron;
 $link: $cadet;
-$box-link-hover-shadow: 0px 0px 2px 3px $link;
+$box-link-hover-shadow: 0px 0px 2px 3px #aaa;
 
 :root {
   --imageShadowColor: #{$cedar-chest};

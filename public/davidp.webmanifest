@@ -1,13 +1,13 @@
 {
+  "name": "David Pescariu",
+  "short_name": "@davidp-ro",
   "theme_color": "#db504a",
   "background_color": "#eee",
   "display": "minimal-ui",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
-  "name": "David Pescariu",
-  "short_name": "@davidp-ro",
-  "description": "Student & Developer | Portofolio",
+  "description": "Student & Developer | Portfolio",
   "icons": [
       {
           "src": "assets/icon-192x192.png",

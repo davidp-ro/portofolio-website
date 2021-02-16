@@ -4,6 +4,7 @@
   function switchPage(newPage: string) {
     document.getElementsByTagName("html")[0].classList.remove("is-clipped");
     page.update((_) => newPage);
+    window.history.pushState({page: newPage}, `@davidp-ro - ${newPage}`, `?${newPage}`);
   }
 </script>
 
@@ -94,5 +95,13 @@
     border-radius: 50%;
     width: 56px;
     height: 56px;
+  }
+
+  .box {
+    transition: transform .1s;
+  }
+
+  .box:hover {
+    transform: scale(1.05);
   }
 </style>
