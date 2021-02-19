@@ -1,11 +1,6 @@
 <script lang="ts">
-  import { page, mediaQuery } from "../../../stores";
-
-  function switchPage(newPage: string) {
-    document.getElementsByTagName("html")[0].classList.remove("is-clipped");
-    page.update((_) => newPage);
-    window.history.pushState({page: newPage}, `@davidp-ro - ${newPage}`, `?${newPage}`);
-  }
+  import { mediaQuery } from "../../../stores";
+  import switchPage from "../../../utils/switchPage";
 </script>
 
 <div class="columns has-text-centered">

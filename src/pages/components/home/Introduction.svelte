@@ -6,10 +6,6 @@
   let hoverCounter = 0;
   let descText = "Student & Developer from Romania";
 
-  if ($mediaQuery === "desktop") {
-    document.getElementsByTagName("html")[0].classList.add("is-clipped");
-  }
-
   function fadeInOut() {
     isVisible = false;
     setTimeout(() => {
@@ -23,7 +19,7 @@
   }
 </script>
 
-<div class="columns">
+<div class="columns is-desktop">
   {#if $mediaQuery === "desktop"}
     <div class="column" />
   {/if}

@@ -1,9 +1,12 @@
 <script lang="ts">
+  let loaded = false;
+  let showConsentPrompt = false;
+
   // Remove safe-text because the script loaded sucesfully
-  const safeText = document.getElementById("safe-text");
-  safeText.remove();
+  document.getElementById("safe-text").remove();
   
   import { page } from "./stores";
+  import switchPage from "./utils/switchPage";
   // import CookieManager from "./utils/cookieManager";
 
   import Home from "./pages/Home.svelte";
@@ -16,17 +19,29 @@
   import MediaQuery from "./utils/MediaQuery.svelte";
   import UpdateMQ from "./utils/UpdateMQ.svelte";
 
+  /**
+   * If there is a page in the URL, switch to it. (only on inital load)
+   * 
+   * @example /?contact will switch to the contacts page.
+   */
+  function reactToURL(): void {
+    if (!loaded) {
+      const splitUrl = window.location.href.split("/");
+      let urlPage = splitUrl[splitUrl.length - 1];
+      if (urlPage.length == 0) return; // No page in url, exit
+      urlPage = urlPage.replace(/\?*\#*/gm, '');
+      switchPage(urlPage);
+    }
+  }
+  reactToURL();
+
   // TODO: Made this in advance, uncomment when google analytics is implemented
   // let consent = CookieManager.getCookie("acceptedCookies");
-  let showConsentPrompt: boolean = false;
   // if (consent !== null) {
   //   showConsentPrompt = false;
   // }
 
-  /**
-   * FIXME: Bugs and todos:
-   *  Content for the new page is loaded before the initial page is gone
-   */
+  loaded = true;
 </script>
 
 <div class="App">
@@ -56,7 +71,6 @@
     <Contact />
   {:else}
     <Home />
-    <!-- <About /> -->
   {/if}
 
   <!-- Consent -->

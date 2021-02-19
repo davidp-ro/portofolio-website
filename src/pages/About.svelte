@@ -52,7 +52,7 @@
             href="https://polihack.osut.org/">Polihack</a
           >
           where we built an MVP for a pair of glasses meant to help the blind keep
-          their social distance during the COVID pandemic.
+          their social distance during the COVID pandemic. Won 1<sup>st</sup> place
           <br />
           <a target="_blank" href="https://www.youtube.com/watch?v=IlWPMHCDhBA"
             >See our presentation video (Romanian)</a

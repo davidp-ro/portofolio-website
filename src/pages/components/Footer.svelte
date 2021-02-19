@@ -1,15 +1,32 @@
 <script lang="ts">
   import CookieManager from "../../utils/cookieManager";
+  import { mediaQuery } from "../../stores";
+
+  export let isFixed: boolean = false;
+  let isLoadingBtn = false;
+  let footerClass = "footer";
+
+  mediaQuery.subscribe(mq => {
+    if (isFixed && mq !== "mobile") {
+      footerClass = "footer-fixed";
+    } else {
+      footerClass = "footer";
+    }
+  });
 </script>
 
-<footer class="footer">
+<footer class={footerClass}>
   <div class="content has-text-centered">
     <div class="columns is-vcentered">
       <div class="column">
         <button
-          class="button is-rounded is-danger is-outlined"
+          class="button is-rounded is-danger is-outlined {isLoadingBtn ? "is-loading" : ""}"
           on:click={() => {
             CookieManager.eraseAllCookies();
+            isLoadingBtn = true;
+            // The deletion is basically instant, the delay is here so that a
+            // visitor sees someting happening
+            setTimeout(() => {window.location.href = "/deleted-cookies"}, 831);
           }}>Delete cookies from this site</button
         >
       </div>
@@ -35,6 +52,20 @@
 
 <style>
   .footer {
+    margin-top: 3.5rem;
+    padding: 2rem 0 2rem 0;
+    background-color: #ffffffaa;
+
+    -webkit-box-shadow: 0px 0px 10px 10px #ffffffaa;
+    -moz-box-shadow: 0px 0px 10px 10px #ffffffaa;
+    box-shadow: 0px 0px 10px 10px #ffffffaa;
+  }
+
+  .footer-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
     margin-top: 3.5rem;
     padding: 2rem 0 2rem 0;
     background-color: #ffffffaa;

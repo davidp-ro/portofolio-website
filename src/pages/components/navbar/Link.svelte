@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "../../../stores";
+  import switchPage from "../../../utils/switchPage";
   export let to: string;
 
   function getDisplayName(): string {
@@ -13,11 +14,6 @@
       default:
         return "Fail";
     }
-  }
-
-  function switchPage(newPage: string) {
-    page.update((_) => newPage);
-    window.history.pushState({page: newPage}, `@davidp-ro - ${newPage}`, `?${newPage}`);
   }
 </script>
 

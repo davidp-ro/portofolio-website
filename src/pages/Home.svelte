@@ -5,9 +5,6 @@
   import Introduction from "./components/home/Introduction.svelte";
   import Buttons from "./components/home/Buttons.svelte";
 
-  // TODO: Remove when done / cookies are implemented:
-  import WIP from "./components/home/WIP.svelte";
-
   // Make sure to remove the navbar padding
   document.querySelector("body").classList.remove("has-navbar-fixed-top");
 </script>
@@ -28,9 +25,6 @@
   {#if $mediaQuery !== "desktop"}
     <div style="height: 9rem" />
   {/if}
-
-  <!-- TODO: Remove -->
-  <WIP />
 </section>
 
 <style>
