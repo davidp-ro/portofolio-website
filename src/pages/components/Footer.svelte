@@ -17,7 +17,7 @@
 
 <footer class={footerClass}>
   <div class="content has-text-centered">
-    <div class="columns is-vcentered">
+    <div class="columns m-0 is-vcentered">
       <div class="column">
         <button
           class="button is-rounded is-danger is-outlined {isLoadingBtn ? "is-loading" : ""}"
