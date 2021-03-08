@@ -8,7 +8,7 @@
   import { mediaQuery } from "../stores";
 </script>
 
-<section class="content" transition:fade={{ delay: 200, duration: 300 }}>
+<section class="content" transition:fade={{ delay: 150, duration: 300 }}>
   <Navbar />
 
   {#if $mediaQuery === "desktop"}

@@ -11,7 +11,7 @@
   }
 </script>
 
-<section class="content" transition:fade={{ delay: 200, duration: 300 }}>
+<section class="content" transition:fade={{ delay: 150, duration: 300 }}>
   <Navbar />
 
   {#if $mediaQuery === "desktop"}
@@ -64,7 +64,7 @@
       <div style="height: 1rem" />
 
       <!-- Section 2 -->
-      <h3>Academics</h3>
+      <h3>Academics / Contests</h3>
       <hr style="background-color: var(--primary)" />
       <p>
         Head of Promotion / Valedictorian - <a
@@ -75,7 +75,18 @@
 
         <span
           ><hr
-            class="mx-auto"
+            class="mx-auto my-3"
+            style="width: 20rem; background-color: #A1A1A1"
+          /></span
+        >
+
+        2<sup>nd</sup> Place
+        <a target="_blank" href="https://www.nerd-pitch.ro/">NerdPitch</a> Hackathon -
+        Entrepreneurship
+
+        <span
+          ><hr
+            class="mx-auto my-3"
             style="width: 20rem; background-color: #A1A1A1"
           /></span
         >
