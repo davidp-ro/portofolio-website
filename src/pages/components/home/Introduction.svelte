@@ -4,7 +4,7 @@
 
   let isVisible = true;
   let hoverCounter = 0;
-  let descText = "Student & Developer from Romania";
+  let descText = "Student, Developer and future Entrepreneur from Romania";
 
   function fadeInOut() {
     isVisible = false;
@@ -14,8 +14,17 @@
   }
 
   function getRandomColor() {
-    let color = randomColor({luminosity: "dark"});
-    document.documentElement.style.setProperty("--imageShadowColor", `${color}cc`);
+    let color;
+    try {
+      color = randomColor({ luminosity: "dark" });
+    } catch(e) {
+      console.warn(`Cannot get random color: ${e}`);
+      color = "#db504a";
+    }
+    document.documentElement.style.setProperty(
+      "--imageShadowColor",
+      `${color}cc`
+    );
   }
 </script>
 
@@ -26,7 +35,7 @@
   <div class="column">
     <h3 class="is-size-3 mt-5 mb-0">Hi! I'm</h3>
     <h1 class="title is-size-1 my-0">David Pescariu</h1>
-    {#if (isVisible && $mediaQuery === "desktop")}
+    {#if isVisible && $mediaQuery === "desktop"}
       <br />
       <br />
       <h5 class="is-size-5" transition:fade={{ duration: 100 }}>{descText}</h5>
@@ -42,19 +51,19 @@
           getRandomColor();
           fadeInOut();
           hoverCounter++;
-          descText = "Handsome lad eh?";
+          if (hoverCounter % 4 === 0) {
+            descText = "Having fun? :)";
+          } else {
+            descText = "Handsome lad eh?";
+          }
         }}
         on:mouseout={() => {
           fadeInOut();
-          if (hoverCounter % 5 === 0) {
-            descText = "Having fun? :)";
-          } else {
-            descText = "Student & Developer from Romania";
-          }
+          descText = "Student, Developer and future Entrepreneur from Romania";
         }}
       />
       {#if $mediaQuery !== "desktop"}
-      <h5 class="is-size-5 mt-4">{descText}</h5>
+        <h5 class="is-size-5 mt-4">{descText}</h5>
       {/if}
     </figure>
   </div>
@@ -68,7 +77,7 @@
     height: 256px !important;
     width: 256px !important;
     box-shadow: 0px 0px 20px 18px #aaa;
-    transition: transform .3s;
+    transition: transform 0.3s;
   }
   img:hover {
     box-shadow: 0px 0px 20px 18px var(--imageShadowColor);

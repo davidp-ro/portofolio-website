@@ -38,7 +38,7 @@
           I’m on the right path with their wishes.
         </li>
         <li>
-          Latest delivered project – <a
+          Latest delivered project as of March 2021 – <a
             target="_blank"
             href="https://davinet.ro">davinet.ro</a
           >
@@ -88,6 +88,33 @@
         </li>
       </ul>
       <!-- End:DPIT -->
+
+      <div style="height: 2rem" />
+
+      <!-- This Website -->
+      <div class="columns m-0 is-vcentered">
+        <div class="column m-0">
+          <h4 class="m-0">This Website</h4>
+        </div>
+      </div>
+      <hr class="mx-0" style="background-color: var(--warning)" />
+      <p class="px-3" />
+      <ul>
+        <li>Designed as a Single Page Application & Made with Svelte.</li>
+        <li>
+          For styling I went with Bulma mostly because that's what I'm most
+          familiar with, and I have better <em>flow</em> with it than with Tailwind.
+        </li>
+        <li>
+          Want to see the source? <a
+            target="_blank"
+            href="https://github.com/davidp-ro/portofolio-website"
+            >View the GitHub Repo</a
+          >
+        </li>
+      </ul>
+
+      <!-- End:This Website -->
     </div>
 
     <!-- Spacer right -->
@@ -96,5 +123,5 @@
     {/if}
   </div>
 
-  <Footer isFixed={true} />
+  <Footer />
 </section>
