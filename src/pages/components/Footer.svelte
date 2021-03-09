@@ -22,6 +22,7 @@
         <button
           class="button is-rounded is-danger is-outlined {isLoadingBtn ? "is-loading" : ""}"
           on:click={() => {
+            window['ga-disable-G-ZWC0878YHQ'] = true;
             CookieManager.eraseAllCookies();
             isLoadingBtn = true;
             // The deletion is basically instant, the delay is here so that a

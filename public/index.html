@@ -13,10 +13,14 @@
     All logos and/or trademarks are the property of their respective owners.
 -->
 
-<html lang="en" style="overflow-y : auto">
+<html lang="en" style="overflow-y: auto">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Student, Developer and Future Entrepreneur from Romania"
+    />
     <link rel="canonical" href="https://davidp-ro.github.io/" />
 
     <title>David Pescariu</title>
@@ -24,8 +28,55 @@
     <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon" />
     <link rel="manifest" href="davidp.webmanifest" />
 
-    <link rel="preload" href="/css/index.css" as="style" onload="this.onload=null; this.rel='stylesheet';">
-    <link rel="preload" href="/dist/bundle.css" as="style" onload="this.onload=null; this.rel='stylesheet';">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZWC0878YHQ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("consent", "default", {
+        "ad-storage": "denied",
+        analytics_storage: "denied",
+      });
+      gtag("config", "G-ZWC0878YHQ", { anonymize_ip: true });
+    </script>
+    <!-- End:Google Analytics -->
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="David Pescariu" />
+    <meta property="og:url" content="https://davidp-ro.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Student, Developer and Future Entrepreneur from Romania"
+    />
+    <meta property="og:image" content="/assets/icon-512x512.png" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="David Pescariu" />
+    <meta
+      property="twitter:description"
+      content="Student, Developer and Future Entrepreneur from Romania"
+    />
+    <meta property="twitter:image" content="/assets/icon-512x512.png" />
+    <!-- End:OpenGraph -->
+
+    <link
+      rel="preload"
+      href="/css/index.css"
+      as="style"
+      onload="this.onload=null; this.rel='stylesheet';"
+    />
+    <link
+      rel="preload"
+      href="/dist/bundle.css"
+      as="style"
+      onload="this.onload=null; this.rel='stylesheet';"
+    />
 
     <style>
       ::-webkit-scrollbar {
@@ -71,6 +122,12 @@
     <noscript>
       <link rel="stylesheet" href="/css/index.css" />
       <link rel="stylesheet" href="/dist/bundle.css" />
+
+      <style>
+        #pageloader {
+          display: none;
+        }
+      </style>
     </noscript>
 
     <div id="pageloader">
@@ -111,15 +168,21 @@
       To access this website, you need a more modern website, like<br />
       <a href="https://www.google.com/chrome/">Google Chrome</a> or<br />
       <a href="https://www.mozilla.org/firefox/">Mozilla Firefox</a>
+      <br />
+      <br />
+      If you do use a modern browser, please note that JavaScript is also
+      required.
     </div>
 
     <script>
       // IE Compatible
       function loaded() {
-        setTimeout(function() {
+        setTimeout(function () {
           var pg = document.getElementById("pageloader");
           pg.style.opacity = "0";
-          setTimeout(function() {pg.style.display = "none"}, 500);
+          setTimeout(function () {
+            pg.style.display = "none";
+          }, 500);
         }, 500);
       }
     </script>

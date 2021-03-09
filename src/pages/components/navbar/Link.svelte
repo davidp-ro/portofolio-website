@@ -1,6 +1,8 @@
 <script lang="ts">
   import { page } from "../../../stores";
   import switchPage from "../../../utils/switchPage";
+
+  import { trackClick } from "../GATracker.svelte";
   export let to: string;
 
   function getDisplayName(): string {
@@ -19,12 +21,12 @@
 
 {#if to === $page}
   <!-- svelte-ignore a11y-missing-attribute -->
-  <a class="navbar-item" on:click={() => {switchPage(to)}}>
+  <a class="navbar-item" on:click={() => {switchPage(to); trackClick(to);}}>
     <span class="currentPage">{getDisplayName()}</span>
   </a>
 {:else}
   <!-- svelte-ignore a11y-missing-attribute -->
-  <a class="navbar-item" on:click={() => {switchPage(to)}}>
+  <a class="navbar-item" on:click={() => {switchPage(to); trackClick(to);}}>
     <span>{getDisplayName()}</span>
   </a>
 {/if}

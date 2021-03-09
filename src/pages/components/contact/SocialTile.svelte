@@ -5,11 +5,22 @@
   export let color: string;
   export let textColor: string;
   export let icon: string;
+
+  import { trackSocialClick } from "../GATracker.svelte";
 </script>
 
-<a href={link} target="_blank" class="box has-text-left" style="background-color: {color}">
+<a
+  href={link}
+  target="_blank"
+  class="box has-text-left"
+  style="background-color: {color}"
+  on:click={() => {trackSocialClick(name);}}
+>
   <div class="columns is-mobile">
-    <div class="column is-2 has-text-centered mx-auto my-auto" style="color: {textColor}">
+    <div
+      class="column is-2 has-text-centered mx-auto my-auto"
+      style="color: {textColor}"
+    >
       <div class="icon">
         {@html icon}
       </div>
@@ -23,7 +34,7 @@
 
 <style>
   .box {
-    transition: transform .1s;
+    transition: transform 0.1s;
     height: 6rem;
   }
 

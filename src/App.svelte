@@ -1,13 +1,13 @@
 <script lang="ts">
   let loaded = false;
-  let showConsentPrompt = false;
+  let showConsentPrompt = true;
 
   // Remove safe-text because the script loaded sucesfully
   document.getElementById("safe-text").remove();
   
-  import { page } from "./stores";
+  import { page, doNotTrack } from "./stores";
   import switchPage from "./utils/switchPage";
-  // import CookieManager from "./utils/cookieManager";
+  import CookieManager from "./utils/cookieManager";
 
   import Home from "./pages/Home.svelte";
   import About from "./pages/About.svelte";
@@ -35,11 +35,16 @@
   }
   reactToURL();
 
-  // TODO: Made this in advance, uncomment when google analytics is implemented
-  // let consent = CookieManager.getCookie("acceptedCookies");
-  // if (consent !== null) {
-  //   showConsentPrompt = false;
-  // }
+  /* ===============[ COOKIES ]=============== */
+  const consent = CookieManager.getCookie("acceptedCookies");
+  if (consent !== null) {
+    showConsentPrompt = false;
+    window['ga-disable-G-ZWC0878YHQ'] = false;
+    gtag('consent', 'update', {"analytics_storage": "granted"})
+
+    doNotTrack.update((_) => "");
+  }
+  /* ========================================= */
 
   loaded = true;
 </script>

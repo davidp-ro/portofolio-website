@@ -1,6 +1,8 @@
 <script lang="ts">
   import { mediaQuery } from "../../../stores";
   import switchPage from "../../../utils/switchPage";
+
+  import { trackClick } from "../GATracker.svelte";
 </script>
 
 <div class="columns has-text-centered">
@@ -9,9 +11,15 @@
   {/if}
 
   <!-- Go to About -->
-  <div class="column has-text-left"> 
+  <div class="column has-text-left">
     <!-- svelte-ignore a11y-missing-attribute -->
-    <a class="box is-success mx-3" on:click={() => {switchPage("about")}}>
+    <a
+      class="box is-success mx-3"
+      on:click={() => {
+        switchPage("about");
+        trackClick("about");
+      }}
+    >
       <div class="rnd" style="background-color: #084c61">
         <svg
           aria-hidden="true"
@@ -31,11 +39,17 @@
       </div>
     </a>
   </div>
-  
+
   <!-- Go to Work -->
   <div class="column has-text-left">
     <!-- svelte-ignore a11y-missing-attribute -->
-    <a class="box is-success mx-3" on:click={() => {switchPage("work")}}>
+    <a
+      class="box is-success mx-3"
+      on:click={() => {
+        switchPage("work");
+        trackClick("work");
+      }}
+    >
       <div class="rnd" style="background-color: #e3b505">
         <svg
           aria-hidden="true"
@@ -57,7 +71,13 @@
   </div>
 
   <!-- Go to Contact -->
-  <div class="column has-text-left" on:click={() => {switchPage("contact")}}>
+  <div
+    class="column has-text-left"
+    on:click={() => {
+      switchPage("contact");
+      trackClick("contact");
+    }}
+  >
     <!-- svelte-ignore a11y-missing-attribute -->
     <a class="box is-success mx-3">
       <div class="rnd" style="background-color: #db504a">
@@ -93,7 +113,7 @@
   }
 
   .box {
-    transition: transform .1s;
+    transition: transform 0.1s;
   }
 
   .box:hover {
