@@ -22,14 +22,14 @@
     </div>
     <div class="dropdown-menu">
       <div class="dropdown-content dropdown-custom has-text-centered">
-        <a class="button is-rounded" target="_blank" href="/David-Pescariu.pdf">
+        <a class="button is-rounded" target="_blank" href="/David-Pescariu_RO.pdf">
           Română
         </a>
         <br />
         <a
           class="button is-rounded mb-0"
           target="_blank"
-          href="/David-Pescariu_en.pdf"
+          href="/David-Pescariu_EN.pdf"
         >
           English
         </a>
